@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+// Class to represent a complex number
+class Complex
+{
+    float real, imag;
+
+public:
+    // Constructor to initialize real and imaginary parts
+    Complex(float r = 0, float i = 0)
+    {
+        real = r;
+        imag = i;
+    }
+
+    // Overload / operator to divide complex number by a scalar
+    Complex operator/(float scalar)
+    {
+        return Complex(real / scalar, imag / scalar);
+    }
+
+    // Function to display the complex number
+    void display()
+    {
+        cout << real << " + " << imag << "i";
+    }
+};
+
+int main()
+{
+    // Create a complex number
+    Complex c1(10, 20);
+
+    // Define the scalar value
+    float scalar = 2;
+
+    // Divide the complex number by the scalar
+    Complex c2 = c1 / scalar;
+
+    // Display the original complex number
+    cout << "Complex number: ";
+    c1.display();
+
+    // Display the result after division
+    cout << "\nAfter division by scalar " << scalar << ": ";
+    c2.display();
+
+    return 0;
+}
