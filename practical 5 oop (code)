@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+// Function to find the sum of integer array
+int sum(int arr[], int n)
+{
+    int total = 0;
+
+    // Add all integer elements
+    for (int i = 0; i < n; i++)
+    {
+        total = total + arr[i];
+    }
+
+    return total;
+}
+
+// Function to find the sum of floating-point array
+float sum(float arr[], int n)
+{
+    float total = 0;
+
+    // Add all floating-point elements
+    for (int i = 0; i < n; i++)
+    {
+        total = total + arr[i];
+    }
+
+    return total;
+}
+
+int main()
+{
+    // Declare an integer array
+    int intArray[] = {10, 20, 30, 40, 50};
+
+    // Declare a floating-point array
+    float floatArray[] = {1.5, 2.5, 3.5, 4.5, 5.5};
+
+    // Calculate the size of integer array
+    int n1 = sizeof(intArray) / sizeof(intArray[0]);
+
+    // Calculate the size of floating-point array
+    int n2 = sizeof(floatArray) / sizeof(floatArray[0]);
+
+    // Call sum() function for integer array
+    cout << "Sum of integer array = " << sum(intArray, n1) << endl;
+
+    // Call sum() function for floating-point array
+    cout << "Sum of floating-point array = " << sum(floatArray, n2) << endl;
+
+    return 0;
+}
