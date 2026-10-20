@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+// Base class 1: Employee information
+class Employee
+{
+protected:
+    int emp_id;
+    string name;
+    string department;
+
+public:
+    void getEmployee()
+    {
+        cout << "Enter Employee ID: ";
+        cin >> emp_id;
+
+        cout << "Enter Employee Name: ";
+        cin >> name;
+
+        cout << "Enter Department: ";
+        cin >> department;
+    }
+};
+
+// Base class 2: Bank information
+class Bank
+{
+protected:
+    string bank_name;
+    string account_no;
+    float salary;
+
+public:
+    void getBank()
+    {
+        cout << "Enter Bank Name: ";
+        cin >> bank_name;
+
+        cout << "Enter Account Number: ";
+        cin >> account_no;
+
+        cout << "Enter Salary: ";
+        cin >> salary;
+    }
+};
+
+// Derived class: Multiple inheritance
+class EmployeeDetails : public Employee, public Bank
+{
+public:
+    void display()
+    {
+        cout << "\n----- Employee Salary Account Details -----" << endl;
+        cout << "Employee ID       : " << emp_id << endl;
+        cout << "Employee Name     : " << name << endl;
+        cout << "Department        : " << department << endl;
+        cout << "Bank Name         : " << bank_name << endl;
+        cout << "Account Number    : " << account_no << endl;
+        cout << "Salary            : " << salary << endl;
+    }
+};
+
+int main()
+{
+    EmployeeDetails e;
+
+    e.getEmployee();
+    e.getBank();
+    e.display();
+
+    return 0;
+}
