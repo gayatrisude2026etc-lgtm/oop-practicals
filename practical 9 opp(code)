@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+// Base class
+class Machine
+{
+public:
+    // Virtual function
+    virtual void start()
+    {
+        cout << "Machine is starting." << endl;
+    }
+};
+
+// Derived class Printer
+class Printer : public Machine
+{
+public:
+    // Override start() function
+    void start()
+    {
+        cout << "Printer is starting and ready to print." << endl;
+    }
+};
+
+// Derived class Scanner
+class Scanner : public Machine
+{
+public:
+    // Override start() function
+    void start()
+    {
+        cout << "Scanner is starting and ready to scan." << endl;
+    }
+};
+
+int main()
+{
+    // Create objects of derived classes
+    Printer p;
+    Scanner s;
+
+    // Base class pointer
+    Machine *ptr;
+
+    // Point to Printer object
+    ptr = &p;
+    ptr->start();
+
+    // Point to Scanner object
+    ptr = &s;
+    ptr->start();
+
+    return 0;
+}
